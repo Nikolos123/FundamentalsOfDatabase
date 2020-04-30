@@ -12,8 +12,6 @@ while a > 0:
         break
     elif c > b:
         b = c
-    a = a //10
+    a = a // 10
 
 print(f'Самая больщая цифра в числе была {b}')
-
-

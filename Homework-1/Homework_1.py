@@ -17,27 +17,27 @@
 
 a = 1
 b = 4
-print(a + b -3)
+print(a + b - 3)
 
 a = 1
 b = 2
-print(a/2+b)
+print(a / 2 + b)
 
 a = 4
 b = 5
-print(a==b)
+print(a == b)
 
 a = 3
 b = 4
-print(a%b)
+print(a % b)
 
 a = 7
 b = 3
-print(a//b)
+print(a // b)
 
 a = 2
 b = 2
-print(a*b)
+print(a * b)
 
 # a = 2
 # b = 0
@@ -45,4 +45,4 @@ print(a*b)
 
 a = 2
 b = 2
-print(int(a/b))
+print(int(a / b))
