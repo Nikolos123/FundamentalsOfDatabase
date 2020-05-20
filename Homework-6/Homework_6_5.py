@@ -15,28 +15,17 @@ class Stationery:
 
 
 class Pen(Stationery):
-    def __init__(self, title):
-        super().__init__(title)
-        pass
 
     def draw(self):
         print(f'Запуск отрисовки {self.title}')
 
 
 class Pencil(Stationery):
-    def __init__(self, title):
-        super().__init__(title)
-        pass
-
     def draw(self):
         print(f'Запуск отрисовки {self.title}')
 
 
 class Handle(Stationery):
-    def __init__(self, title):
-        super().__init__(title)
-        pass
-
     def draw(self):
         print(f'Запуск отрисовки {self.title}')
 
