@@ -11,8 +11,6 @@ import random
 
 SIZE = 5
 matrix = [[random.randint(1, 20) for _ in range(SIZE)] for _ in range(SIZE)]
-matrix1 = [[random.randint(1, 20) for _ in range(SIZE)] for _ in range(SIZE)]
-matrix2 = [[random.randint(0, 0) for _ in range(SIZE)] for _ in range(SIZE)]
 
 
 class Matrix:
@@ -20,23 +18,20 @@ class Matrix:
         self.my_list = my_list
 
     def __add__(self, other):
-        return Matrix(self.my_list + other.my_list)
+        c = []
+        for i in range(len(self.my_list)):
+            c.append([])
+            for j in range(len(self.my_list)):
+                c[i].append(self.my_list[i][j] + other.my_list[i][j])
+        return '\n'.join(map(str, c))
 
     def __str__(self):
-        return f'{self.my_list}'
+        return '\n'.join(map(str, self.my_list))
 
 
 matrix_1 = Matrix(matrix)
-matrix_2 = Matrix(matrix1)
-result = matrix2
-for i in range(len(matrix_1.my_list)):
+matrix_2 = Matrix(matrix)
 
-    for j in range(len(matrix_1.my_list[0])):
-        result[i][j] = matrix_1.my_list[i][j] + matrix_2.my_list[i][j]
-
-for line in result:
-    for item in line:
-        print(f'{item:>4}', end='')
-    print()
-
-print('-' * (len(matrix)) * 4)
+print(f"Matrix 1\n{matrix_1}\n{'-' * 20}")
+print(f"Matrix 2\n{matrix_2}\n{'-' * 20}")
+print(f"{matrix_1 + matrix_2}\n{'-' * 20}")
