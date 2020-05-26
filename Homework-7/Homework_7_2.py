@@ -14,28 +14,26 @@
 
 from abc import ABC, abstractmethod
 
-from abc import ABC, abstractmethod
-
 
 class MyAbCl(ABC):
-    @abstractmethod
-    def get_kost(self):
-        return f'Расход для костюма {str(self.VH)}'
-
-    @abstractmethod
-    def get_palt(self):
-        return f'Расход на пальто {str(self.VH)}'
-
-
-class MyClass(MyAbCl):
     def __init__(self, VH, HV):
         if HV == 0:
             self.VH = 2 * VH + 0.3
         elif VH == 0:
-            self.VH = HV / 6.5 + 0.5
+            self.VH = round(HV / 6.5 + 0.5, 2)
         else:
             self.VH = 0
 
+    @abstractmethod
+    def get_kost(self):
+        pass
+
+    @abstractmethod
+    def get_palt(self):
+        pass
+
+
+class MyClass(MyAbCl):
     @property
     def VH(self):
         return self.__VH
@@ -51,8 +49,16 @@ class MyClass(MyAbCl):
         return f'Расход на пальто {str(self.VH)}'
 
 
-my_1 = MyClass(10, 0)
+class Coat(MyClass):
+    pass
+
+
+class Costume(MyClass):
+    pass
+
+
+my_1 = Coat(10, 0)
 print(my_1.get_kost())
 
-my_1 = MyClass(0, 10)
+my_1 = Costume(0, 10)
 print(my_1.get_palt())
