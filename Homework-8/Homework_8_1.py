@@ -43,3 +43,4 @@ class Date:
 a = input('Введите дату в формате 12-01-2012 ')
 met = Date()
 met.one(a)
+Date.two(a)
